@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 // Your Firebase configuration
-const serviceAccount = require('/Users/labh/Desktop/Projects/ADMIN-STAFF-DASHBOARD/server/firebase/school-ee33a-firebase-adminsdk-sa3e3-329ccc1738.json');
+const serviceAccount = require('./firebase/school-ee33a-firebase-adminsdk-sa3e3-329ccc1738.json');
 
 // Initialize Firebase Admin SDK
 admin.initializeApp({
@@ -27,7 +27,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // admin.firestore.setLogFunction(console.log);
-
 app.post('/signin', async (req, res) => {
     const { email, password } = req.body;
 
