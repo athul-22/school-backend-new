@@ -25,6 +25,7 @@ const corsOptions = {
     origin: 'http://localhost:3000', // Allow requests from frontend
 };
 app.use(cors(corsOptions));
+app.use(express.static(path.join(__dirname, "views/build")));
 
 // admin.firestore.setLogFunction(console.log);
 app.post('/signin', async (req, res) => {
